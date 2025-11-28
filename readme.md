@@ -88,12 +88,6 @@ instrument-reservation-app/
 │   ├── index.html
 │   ├── vite.config.js
 │   └── package.json        # Frontend dependencies
-├── database/
-│   ├── 01_create_tables.sql
-│   ├── 02_insert_data.sql
-│   ├── 03_encryption.sql
-│   ├── 04_indexes.sql
-│   └── 05_stored_procedures.sql
 └── README.md
 ```
 
