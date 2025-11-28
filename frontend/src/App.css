@@ -1,0 +1,655 @@
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  color: #e4e4e4;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.app-header {
+  background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid #e94560;
+}
+
+.header-content h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.header-subtitle {
+  color: #a4a4a4;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+.app-nav {
+  background: #1a1a2e;
+  padding: 0.75rem 2rem;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #a4a4a4;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #2a2a4a;
+  color: #fff;
+  border-color: #e94560;
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #e94560 0%, #c23a51 100%);
+  color: #fff;
+  border-color: #e94560;
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: #888;
+}
+
+/* ============================================================
+   DASHBOARD
+   ============================================================ */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #1e1e3f;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-left: 4px solid #e94560;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.dashboard-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: #1e1e3f;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h3 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.info-card ul {
+  list-style: none;
+}
+
+.info-card li {
+  padding: 0.5rem 0;
+  color: #a4a4a4;
+  border-bottom: 1px solid #333;
+}
+
+.info-card li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.level-01 {
+  background: #27ae60;
+  color: #fff;
+}
+
+.level-02 {
+  background: #f39c12;
+  color: #fff;
+}
+
+.level-03 {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.status-active,
+.status-badge.active {
+  background: #27ae60;
+  color: #fff;
+}
+
+.status-completed {
+  background: #3498db;
+  color: #fff;
+}
+
+.status-canceled {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.status-unfulfilled {
+  background: #f39c12;
+  color: #fff;
+}
+
+.status-badge.penalized {
+  background: #e74c3c;
+  color: #fff;
+}
+
+/* ============================================================
+   FILTERS
+   ============================================================ */
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.filter-group label {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #1e1e3f;
+  color: #fff;
+  font-size: 0.9rem;
+  min-width: 200px;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: #e94560;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn-primary {
+  background: linear-gradient(135deg, #e94560 0%, #c23a51 100%);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: #2a2a4a;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: #3a3a5a;
+  border-color: #666;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+}
+
+.btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+.btn-book {
+  width: 100%;
+  background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+}
+
+/* ============================================================
+   SLOTS GRID
+   ============================================================ */
+
+.slots-count,
+.bookings-count {
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+.slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.slot-card {
+  background: #1e1e3f;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.slot-card:hover {
+  transform: translateY(-5px);
+}
+
+.slot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #333;
+}
+
+.slot-header h3 {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.slot-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.slot-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a4a4a4;
+  font-size: 0.9rem;
+}
+
+.detail-icon {
+  font-size: 1rem;
+}
+
+/* ============================================================
+   FORM STYLES
+   ============================================================ */
+
+.booking-form {
+  background: #1e1e3f;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #a4a4a4;
+  font-size: 0.9rem;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2a2a4a;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #e94560;
+}
+
+.form-group select option:disabled {
+  color: #666;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.info-card.warning {
+  border: 1px solid #f39c12;
+  background: rgba(243, 156, 18, 0.1);
+}
+
+.info-card h4 {
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.info-card p {
+  color: #a4a4a4;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.alert-error {
+  background: rgba(231, 76, 60, 0.2);
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+.alert-success {
+  background: rgba(39, 174, 96, 0.2);
+  border: 1px solid #27ae60;
+  color: #27ae60;
+}
+
+.alert-warning {
+  background: rgba(243, 156, 18, 0.2);
+  border: 1px solid #f39c12;
+  color: #f39c12;
+}
+
+/* ============================================================
+   TABLE STYLES
+   ============================================================ */
+
+.bookings-table-container {
+  overflow-x: auto;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e1e3f;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bookings-table th,
+.bookings-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.bookings-table th {
+  background: #2a2a4a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.bookings-table tr:hover {
+  background: #2a2a4a;
+}
+
+.student-cell,
+.instrument-cell,
+.datetime-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-cell small,
+.instrument-cell small,
+.datetime-cell small {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 8px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: #888;
+  background: #1e1e3f;
+  border-radius: 12px;
+}
+
+.no-data p {
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.app-footer {
+  background: #1a1a2e;
+  padding: 1rem 2rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+  border-top: 1px solid #333;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .app-nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filter-group select,
+  .filter-group input {
+    min-width: 100%;
+  }
+
+  .bookings-table {
+    font-size: 0.85rem;
+  }
+
+  .bookings-table th,
+  .bookings-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
