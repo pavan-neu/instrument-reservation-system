@@ -374,14 +374,6 @@ A comprehensive test script is provided to verify all stored procedures:
 EXEC database/test_script.sql
 ```
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Contributors
-
-- Your Name - Initial work
-
 ## 🙏 Acknowledgments
 
 - Built as a Database Systems course project
