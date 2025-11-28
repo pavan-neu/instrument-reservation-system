@@ -329,24 +329,6 @@ Open your browser and navigate to: **http://localhost:3000**
 | `TR_Audit_Delete_User`                | Prevents user deletion, logs attempt          |
 | `TR_Audit_Delete_Booking`             | Prevents booking deletion, logs attempt       |
 
-## 📸 Screenshots
-
-### Dashboard
-
-![Dashboard](docs/screenshots/dashboard.png)
-
-### Available Slots
-
-![Available Slots](docs/screenshots/available-slots.png)
-
-### Create Booking
-
-![Create Booking](docs/screenshots/create-booking.png)
-
-### My Bookings
-
-![My Bookings](docs/screenshots/my-bookings.png)
-
 ## 🔧 Troubleshooting
 
 ### Backend won't connect to SQL Server
